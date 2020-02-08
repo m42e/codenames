@@ -150,7 +150,7 @@ class Codenames:
         print("Thinking", end="", flush=True)
 
         # Words to avoid the agent guessing.
-        negs = [w for w in words if w not in my_words]
+        negs = [w for w in words if w not in my_words and w != '---']
         # Worst (highest) inner product with negative words
         nm = (
             self.vectors @ np.array([self.word_to_vector(word) for word in negs]).T
